@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.7.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.yusi.spring.boot.blog'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+//	maven{
+//	url
+//	'http://maven.aliyun.com/nexus/content/groups/public/'
+//	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// 添加 Thymeleaf 的依赖
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	// 添加 Spring Data JPA 的依赖
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	
+	// 添加 MySQL连接驱动 的依赖
+	compile('mysql:mysql-connector-java:6.0.5')
+
+	// 添加 H2 的依赖
+	runtime('com.h2database:h2:1.4.193')
+
+	// 该依赖对于编译测试是必须的，默认包含编译产品依赖和编译时依
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+}
