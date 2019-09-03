@@ -1,4 +1,4 @@
-plugins {
+ plugins {
 	id 'org.springframework.boot' version '2.1.7.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
@@ -33,6 +33,15 @@ dependencies {
 	
 	// 添加 MySQL连接驱动 的依赖
 	compile('mysql:mysql-connector-java:6.0.5')
+	
+	// 添加apache commons lang
+	compile('org.apache.commons:commons-lang3:3.9')
+	
+	// 添加  Spring Security 依赖
+	compile('org.springframework.boot:spring-boot-starter-security')
+
+	// 添加   Thymeleaf Spring Security 依赖
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.2.RELEASE')
 
 	// 添加 H2 的依赖
 	runtime('com.h2database:h2:1.4.193')
